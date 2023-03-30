@@ -1,0 +1,41 @@
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    border-radius:15px;
+    width: 25%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    padding: 2px 16px; 
+    margin: 20px 2px
+}
+.modal-body-content {
+    display: flex;
+    justify-content: center;
+}
+.buttons {
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+}
+.confirmBtn {
+    margin-right: 25px;
+}
