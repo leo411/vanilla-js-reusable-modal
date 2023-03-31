@@ -1,8 +1,6 @@
 class Modal extends HTMLElement {
 	constructor() {
 		super()
-		this._modalVisible = false
-		this._modal
 		this.attachShadow({ mode: "open" })
 		this.shadowRoot.innerHTML = `
       <link rel="stylesheet" href="main.css" />
@@ -46,20 +44,19 @@ class Modal extends HTMLElement {
 
 	disconnectedCallback() {
 		this.button.removeEventListener("click", this._showModal)
+		this.confirm.removeEventListener("click", this._onConfirm)
+		this.cancel.removeEventListener("click", this._onCancel)
 	}
 
 	_showModal() {
-		this._modalVisible = true
 		this._modal.style.display = "block"
 	}
 
 	_onConfirm() {
-		this._modalVisible = false
 		this._modal.style.display = "none"
 		this.output.innerHTML = `You just clicked: "${this.confirm.value}".`
 	}
 	_onCancel() {
-		this._modalVisible = false
 		this._modal.style.display = "none"
 		this.output.innerHTML = `You just clicked: "${this.cancel.value}".`
 	}
